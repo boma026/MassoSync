@@ -23,27 +23,23 @@ import massosync.shared.generated.resources.compose_multiplatform
 @Preview
 fun App() {
     MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(
-            modifier = Modifier
-                .background(MaterialTheme.colorScheme.primaryContainer)
-                .safeContentPadding()
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                }
-            }
+        var mockState by remember { 
+            mutableStateOf(
+                ClientesUiState(
+                    clientes = listOf(
+                        Cliente("1", "Maria Silva", "(11) 98765-4321", "10/09/2026 - Massagem Relaxante"),
+                        Cliente("2", "João Souza", "(11) 91234-5678"),
+                        Cliente("3", "Ana Costa", "(21) 99999-0000", "01/09/2026 - Drenagem Linfática")
+                    )
+                )
+            ) 
         }
+
+        ClientesScreen(
+            state = mockState,
+            onClienteClick = { cliente ->
+                println("Clicou no cliente: ${cliente.nome}")
+            }
+        )
     }
 }
