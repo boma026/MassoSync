@@ -1,5 +1,9 @@
 # Proposta do Projeto: MassoSync
 
+**Disciplina:** DIM0524 — Desenvolvimento de Sistemas para Dispositivos Móveis
+**Equipe:** boma026
+**Repositório:** https://github.com/boma026/MassoSync
+
 ## 1. Visão do Produto
 * **Para:** terapeutas autônomos.
 * **Que:** perdem tempo buscando históricos de clientes e sessões passadas em cadernos de papel.
